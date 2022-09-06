@@ -1,16 +1,121 @@
+# many links and paths might be wrong
+
+name: DEPLOY_MAPPING_TASK
+
+# Controls when the workflow will run
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      committed_sha:
+        description: "Hash to deploy"
+        type: string
+        required: true
 
+env:
+  # was updated
+  IICS_LOGIN_URL: https://dm-em.informaticacloud.com
+  
+  # ORIGINAL WAS
+  # IICS_POD_URL: https://na1.dm-em.informaticacloud.com/saas
+  IICS_POD_URL: https://emw1.dm-em.informaticacloud.com/saas
+  
+  IICS_USERNAME: ${{ secrets.IICS_USERNAME }}
+  IICS_PASSWORD: ${{ secrets.IICS_PASSWORD }}
+
+  UAT_IICS_USERNAME: ${{ secrets.UAT_IICS_USERNAME }}
+  UAT_IICS_PASSWORD: ${{ secrets.UAT_IICS_PASSWORD }}
+
+  # This is overriding until we connect the repository with a workflow_dispatch
+
+  COMMIT_HASH: ${{  github.event.inputs.committed_sha }}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  super-lint:
-    name: Lint code base
+  dev_build:
+    name: Review Development Code
+    environment:
+      name: development
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v3.17.0
-        env:
-          DEFAULT_BRANCH: dev
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Install python and dependent modules
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      
+      - name: Install python modules
+        run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+
+      # Runs a single command using the runners shell
+      - name: Login to development
+        run: |
+            python ./scripts/infa_login.py
+
+      - name: Test Committed Mapping Tasks
+        run: python ./scripts/infa_get_updates.py
+
+  uat_commit:
+    name: Complete uat promotion
+    environment:
+      name: uat
+    needs: dev_build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # ORIGINAL WAS 
+          # repository: tjohnsoninformatica/IICS-CDP-CICD-demo
+          repository: saprykins/GH-Actions_INFA_basic_pipeline
+          ref: uat
+          token: ${{ secrets.GH_TOKEN }}
+          # ORIGINAL WAS 
+          # path: IICS-CDP-CICD-demo
+          path: GH-Actions_INFA_basic_pipeline
+
+      - uses: actions/checkout@v3
+        with:
+          # ORIGINAL WAS
+          # path: iics-promotion-pipeline
+          path: Default # folder in INFA
+
+      # Install python and dependent modules
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      
+      - name: Install python modules
+        run: |
+            python -m pip install --upgrade pip
+            pip install requests
+
+      - name: Set default username
+        run: git config --global user.email "palatatot@gmail.com"; git config --global user.name "saprykins"
+
+      - name: Commit changes to UAT
+        # ORIGINAL WAS
+        # run: cd ./IICS-CDP-CICD-demo; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
+        run: cd ./Default; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
+
+
+      - name: Get latest UAT commit hash
+        # ORIGINAL WAS
+        # run: cd ./IICS-CDP-CICD-demo; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+        run: cd ./Default; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+      
+      - name: Login to UAT
+        # ORIGINAL WAS
+        # run: python ./iics-promotion-pipeline/scripts/infa_login.py
+        run: python ./GH-Actions_INFA_basic_pipeline/scripts/infa_login.py
+
+      - name: Sync and test UAT deployment
+        # ORIGINAL WAS
+        # run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
+        run: python ./GH-Actions_INFA_basic_pipeline/scripts/infa_update_and_test.py
