@@ -18,7 +18,7 @@ It logs in with secrets from GHA
 
 PB: it requires commit sha
 
-Several ways: 
+# TO DO : 
 
 What means on workflow dispatch 
 
