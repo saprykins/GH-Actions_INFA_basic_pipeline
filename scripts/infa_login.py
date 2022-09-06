@@ -25,15 +25,16 @@ if r.status_code != 200:
 UAT_BODY = BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
 
 u = requests.post(url = URL, json = BODY)
-print(u)
-'''
+
 if u.status_code != 200:
     print("Caught exception: " + r.text)
 
 # extracting data in json format
 data = r.json()
 uat_data = u.json()
-
+print(data)
+print(uat_data)
+'''
 # Set session tokens to the environment
 env_file = os.getenv('GITHUB_ENV')
 
