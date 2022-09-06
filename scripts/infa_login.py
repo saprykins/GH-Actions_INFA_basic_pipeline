@@ -18,7 +18,8 @@ URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 BODY = {"username": USERNAME,"password": PASSWORD}
 
 r = requests.post(url = URL, json = BODY)
-
+print(r)
+'''
 if r.status_code != 200:
     print("Caught exception: " + r.text)
 
@@ -41,3 +42,4 @@ with open(env_file, "a") as myfile:
     # myfile.write("sessionId=" + data['userInfo']['sessionId'] + "\n")
     myfile.write("uat_sessionId=" + uat_data['sessionId'] + "\n")
     # myfile.write("uat_sessionId=" + uat_data['userInfo']['sessionId'] + "\n")
+'''
