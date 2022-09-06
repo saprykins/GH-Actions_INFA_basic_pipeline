@@ -4,7 +4,7 @@ import requests
 import os
 
 
-URL = os.environ['IICS_LOGIN_URL']
+# URL = os.environ['IICS_LOGIN_URL']
 USERNAME = os.environ['IICS_USERNAME']
 PASSWORD = os.environ['IICS_PASSWORD']
 
