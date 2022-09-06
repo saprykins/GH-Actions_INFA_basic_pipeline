@@ -27,3 +27,7 @@ What means on workflow dispatch
 2/ [Event triggers](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 
 3/ How to manually run workflows [not same UI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
+
+4/ INFA API docs
+
+5/ postman didn't work with v3 API. Versions have different functionalities
