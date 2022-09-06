@@ -8,7 +8,7 @@ import sys
 
 URL = os.environ['IICS_POD_URL']
 SESSION_ID = os.environ['sessionId']
-COMMIT_HASH: ${{ github.sha }}
+COMMIT_HASH: ${{ github.event.inputs.commited_sha }}
 # COMMIT_HASH = os.environ['COMMIT_HASH']
 
 HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
