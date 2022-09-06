@@ -21,8 +21,9 @@ PB: it requires commit sha
 Several ways: 
 
 What means on workflow dispatch 
-1/ [link_1 on workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 
-2/ [link_2 on event triggers](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+1/ [Workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+
+2/ [Event triggers](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
 
 3/ How to manually run workflows [not same UI](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
