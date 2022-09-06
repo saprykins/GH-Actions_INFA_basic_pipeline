@@ -3,13 +3,14 @@ name: DEPLOY_MAPPING_TASK
 
 # Controls when the workflow will run
 on: 
-  workflow_dispatch:
-    inputs:
-      committed_sha:
-        description: "Hash to deploy"
-        type: string
-        required: true
-#   push
+  push
+#   workflow_dispatch:
+#     inputs:
+#       committed_sha:
+#         description: "Hash to deploy"
+#         type: string
+#         required: true
+
   
 env:
   # was updated
