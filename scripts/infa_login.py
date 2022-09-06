@@ -18,15 +18,15 @@ URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 BODY = {"username": USERNAME,"password": PASSWORD}
 
 r = requests.post(url = URL, json = BODY)
-print(r)
-'''
+
 if r.status_code != 200:
     print("Caught exception: " + r.text)
 
 UAT_BODY = BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
 
 u = requests.post(url = URL, json = BODY)
-
+print(u)
+'''
 if u.status_code != 200:
     print("Caught exception: " + r.text)
 
