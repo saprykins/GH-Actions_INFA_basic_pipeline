@@ -15,6 +15,7 @@ HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID":
 HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 
 print('Getting all objects for the commit: ' + COMMIT_HASH)
+"""
 # Get all the objects for commit
 r = requests.get(URL + "/public/core/v3/commit/" + COMMIT_HASH, headers = HEADERS)
 
@@ -57,3 +58,4 @@ for x in r_filtered:
         print("Mapping task: " + activity_log[0]['objectName'] + " completed successfully. ")
 
 requests.post(URL + "/public/core/v3/logout", headers = HEADERS)
+"""
