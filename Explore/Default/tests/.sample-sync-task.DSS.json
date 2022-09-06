@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "full yml file integrated",
+        "description" : "on push",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
