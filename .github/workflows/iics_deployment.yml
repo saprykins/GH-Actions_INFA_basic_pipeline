@@ -18,7 +18,7 @@ env:
   
   # ORIGINAL WAS
   # IICS_POD_URL: https://na1.dm-em.informaticacloud.com/saas
-  # IICS_POD_URL: https://emw1.dm-em.informaticacloud.com/saas
+  IICS_POD_URL: https://emw1.dm-em.informaticacloud.com/saas
   
   IICS_USERNAME: ${{ secrets.IICS_USERNAME }}
   IICS_PASSWORD: ${{ secrets.IICS_PASSWORD }}
