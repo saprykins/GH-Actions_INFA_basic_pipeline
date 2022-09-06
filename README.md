@@ -6,4 +6,4 @@
 
 Another [link](https://www.mikestreety.co.uk/blog/the-git-commit-hash/)
 
-INFA workflow [example](https://github.com/tjohnsoninformatica/IICS-CDP-CICD-demo/tree/UAT)
+INFA workflow code [example](https://github.com/tjohnsoninformatica/IICS-CDP-CICD-demo/tree/UAT)
