@@ -5,3 +5,5 @@
 [Password usage](https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md)
 
 Another [link](https://www.mikestreety.co.uk/blog/the-git-commit-hash/)
+
+INFA workflow [example](https://github.com/tjohnsoninformatica/IICS-CDP-CICD-demo/tree/UAT)
