@@ -3,7 +3,8 @@
 name: DEPLOY_MAPPING_TASK
 
 # Controls when the workflow will run
-on:
+on: push
+
 # ORIGINAL
   '''
   workflow_dispatch:
@@ -13,8 +14,7 @@ on:
         type: string
         required: true
   '''
-# UPDATE
-  push
+
 env:
   # was updated
   IICS_LOGIN_URL: https://dm-em.informaticacloud.com
