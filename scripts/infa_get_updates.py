@@ -12,13 +12,18 @@ COMMIT_HASH = os.environ['COMMIT_HASH']
 # COMMIT_HASH: ${{ github.event.inputs.commited_sha }}
 
 
-# HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
-HEADERS = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
+HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
+# HEADERS = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 
 print('Getting all objects for the commit: ' + COMMIT_HASH)
 
 # Get all the objects for commit
+# 
+URL = "https://emw1.dm-em.informaticacloud.com/saas/"
+#    
+#    
+#
 r = requests.get(URL + "/public/core/v3/commit/" + COMMIT_HASH, headers = HEADERS)
 
 if r.status_code != 200:
