@@ -12,7 +12,8 @@ COMMIT_HASH = os.environ['COMMIT_HASH']
 # COMMIT_HASH: ${{ github.event.inputs.commited_sha }}
 
 
-HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
+# HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
+HEADERS = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 
 print('Getting all objects for the commit: ' + COMMIT_HASH)
