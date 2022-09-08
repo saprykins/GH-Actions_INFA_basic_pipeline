@@ -19,9 +19,6 @@ HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": 
 print('Getting all objects for the commit: ' + COMMIT_HASH)
 
 # Get all the objects for commit
-# 
-URL = "https://emw1.dm-em.informaticacloud.com/saas"
-#
 r = requests.get(URL + "/public/core/v3/commit/" + COMMIT_HASH, headers = HEADERS)
 
 if r.status_code != 200:
