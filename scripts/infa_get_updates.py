@@ -26,6 +26,8 @@ URL = "https://emw1.dm-em.informaticacloud.com/saas"
 #
 r = requests.get(URL + "/public/core/v3/commit/" + COMMIT_HASH, headers = HEADERS)
 print("r is ", r)
+print(type(r))
+print("r.text", r.text)
 
 if r.status_code != 200:
     print("Exception caught: " + r.text)
