@@ -11,7 +11,7 @@ on:
 #         type: string
 #         required: true
 
-  
+
 env:
   # was updated
   # IICS_LOGIN_URL: https://dm-em.informaticacloud.com
