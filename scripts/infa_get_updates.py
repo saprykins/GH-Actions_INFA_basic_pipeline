@@ -34,7 +34,7 @@ request_json = r.json()
 
 # Only get Mapping Tasks
 r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
-
+"""
 # This loop runs tests for each one of the mapping tasks
 for x in r_filtered:
     BODY = {"@type": "job","taskId": x['appContextId'],"taskType": "MTT"}
@@ -65,4 +65,4 @@ for x in r_filtered:
         print("Mapping task: " + activity_log[0]['objectName'] + " completed successfully. ")
 
 requests.post(URL + "/public/core/v3/logout", headers = HEADERS)
-
+"""
