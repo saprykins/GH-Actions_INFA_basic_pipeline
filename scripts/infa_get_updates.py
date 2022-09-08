@@ -21,12 +21,8 @@ print('Getting all objects for the commit: ' + COMMIT_HASH)
 # Get all the objects for commit
 # 
 URL = "https://emw1.dm-em.informaticacloud.com/saas"
-#    
-#    
 #
 r = requests.get(URL + "/public/core/v3/commit/" + COMMIT_HASH, headers = HEADERS)
-
-print("r.content", r.content)
 
 if r.status_code != 200:
     print("Exception caught: " + r.text)
