@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "sample description 7 after pull",
+        "description" : "there are some on-push workflow in GHA, v6",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
