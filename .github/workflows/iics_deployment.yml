@@ -119,10 +119,13 @@ jobs:
         # run: python ./iics-promotion-pipeline/scripts/infa_login.py
         run: python ./GH-Actions_INFA_basic_pipeline/scripts/infa_update_and_test.py
         # the version below didn't work
-        # run: python ./scripts/infa_login.py
+        # run: python ./Default/scripts/infa_login.py
         
 
       - name: Sync and test UAT deployment
         # ORIGINAL WAS
         # run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
-        run: python ./scripts/infa_update_and_test.py
+        
+        # the code below didn't work
+        # run: python ./scripts/infa_update_and_test.py
+        run: python ./Default/scripts/infa_update_and_test.py
