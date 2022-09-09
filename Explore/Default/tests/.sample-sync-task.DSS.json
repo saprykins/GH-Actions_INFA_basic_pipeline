@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "roles changed",
+        "description" : "removed deployer, added designer",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
