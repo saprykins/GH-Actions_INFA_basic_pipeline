@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "changes after push access provided",
+        "description" : "removed deployer, added designer",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
