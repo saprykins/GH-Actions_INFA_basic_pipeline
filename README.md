@@ -31,3 +31,5 @@ What means on workflow dispatch
 4/ INFA API docs
 
 5/ postman didn't work with v3 API. Versions have different functionalities
+
+6/ Jenkins integration with INFA [link](https://knowledge.informatica.com/s/article/DOC-18287?language=en_US)
