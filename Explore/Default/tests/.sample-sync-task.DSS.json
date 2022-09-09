@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "added default folder for login",
+        "description" : "all paths reviewed in workflow",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
