@@ -49,5 +49,5 @@ with open(env_file, "a") as myfile:
     # print(data['icSessionId'])
     myfile.write("sessionId=" + data['icSessionId'] + "\n")
     # myfile.write("sessionId=" + data['userInfo']['sessionId'] + "\n")
-    # myfile.write("uat_sessionId=" + uat_data['icSessionId'] + "\n")
-    myfile.write("uat_sessionId=" + uat_data['userInfo']['sessionId'] + "\n")
+    myfile.write("uat_sessionId=" + uat_data['icSessionId'] + "\n")
+    # myfile.write("uat_sessionId=" + uat_data['userInfo']['sessionId'] + "\n")
