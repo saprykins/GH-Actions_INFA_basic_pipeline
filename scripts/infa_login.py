@@ -22,9 +22,10 @@ r = requests.post(url = URL, json = BODY)
 if r.status_code != 200:
     print("Caught exception: " + r.text)
 
-UAT_BODY = BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
+# UAT_BODY = BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
+UAT_BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
 
-u = requests.post(url = URL, json = BODY)
+u = requests.post(url = URL, json = UAT_BODY)
 
 if u.status_code != 200:
     print("Caught exception: " + r.text)
