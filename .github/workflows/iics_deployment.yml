@@ -2,13 +2,13 @@ name: DEPLOY_MAPPING_TASK
 
 # Controls when the workflow will run
 on: 
-#   push
-  workflow_dispatch:
-    inputs:
-      committed_sha:
-        description: "Hash to deploy"
-        type: string
-        required: true
+  push
+#   workflow_dispatch:
+#     inputs:
+#       committed_sha:
+#         description: "Hash to deploy"
+#         type: string
+#         required: true
 
 
 env:
@@ -27,11 +27,11 @@ env:
 
   # This is overriding until we connect the repository with a workflow_dispatch
 
-  # on not push
-  COMMIT_HASH: ${{  github.event.inputs.committed_sha }}
+  # on not push (don't know how to run the workflow)
+  # COMMIT_HASH: ${{  github.event.inputs.committed_sha }}
   
   # on push
-  # COMMIT_HASH: ${{  github.sha }}
+  COMMIT_HASH: ${{  github.sha }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
