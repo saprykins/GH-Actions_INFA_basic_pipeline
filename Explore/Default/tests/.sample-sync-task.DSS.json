@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "rerun of prev",
+        "description" : "changed script path",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
