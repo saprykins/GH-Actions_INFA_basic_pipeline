@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "returned icsession id",
+        "description" : "returned long login path",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
