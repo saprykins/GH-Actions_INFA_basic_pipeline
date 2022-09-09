@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "removed deployer, added designer",
+        "description" : "uncommented 3rd file",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
