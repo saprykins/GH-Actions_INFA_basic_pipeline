@@ -1,5 +1,4 @@
-# 
-"""
+
 import requests
 import os
 import json
@@ -83,4 +82,4 @@ for x in r_filtered:
         print("Mapping task: " + activity_log[0]['objectName'] + " completed successfully. ")
 
 requests.post(URL + "/public/core/v3/logout", headers = HEADERS)
-"""
+
