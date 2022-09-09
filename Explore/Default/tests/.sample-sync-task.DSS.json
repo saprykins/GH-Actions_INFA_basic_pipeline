@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "rerun of prev",
+        "description" : "returned icsession id",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
