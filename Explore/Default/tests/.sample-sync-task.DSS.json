@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "all paths reviewed in workflow",
+        "description" : "=",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
