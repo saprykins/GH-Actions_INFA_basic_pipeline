@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "there are some on-push workflow in GHA, v4",
+        "description" : "there are some on-push workflow in GHA, v5",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
