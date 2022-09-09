@@ -106,13 +106,13 @@ jobs:
       - name: Commit changes to UAT
         # ORIGINAL WAS
         # run: cd ./IICS-CDP-CICD-demo; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
-        run: cd ./Default; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
+        run: cd ./GH-Actions_INFA_basic_pipeline; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
 
 
       - name: Get latest UAT commit hash
         # ORIGINAL WAS
         # run: cd ./IICS-CDP-CICD-demo; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
-        run: cd ./Default; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+        run: cd ./GH-Actions_INFA_basic_pipeline; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
       
       - name: Login to UAT
         # ORIGINAL WAS
