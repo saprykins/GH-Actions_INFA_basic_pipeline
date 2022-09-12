@@ -18,7 +18,7 @@ u = requests.post(url = URL, json = UAT_BODY)
 print('artificial status code ', u.status_code)
 uat_data = u.json()
 print('artificial sessiod id ', uat_data['icSessionId'])
-UAT_SESSOIN_ID = uat_data['icSessionId']
+UAT_SESSION_ID = uat_data['icSessionId']
 
 ###
 
