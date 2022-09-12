@@ -34,20 +34,27 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
 ### TEMPORARY REMAKE 
 #
-URL = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
+URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
 HEADER = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
-p = requests.post(url = URL, json = BODY, headers = HEADER)
+p = requests.post(url = URL2, json = BODY, headers = HEADER)
+
+print('my url ', url)
+print('original url ', URL + "/public/core/v3/pullByCommitHash")
+
+print('my header ', HEADER)
+print('original header ', HEADERS)
 
 #
 # p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
+
+
 
 print("perso msg: ", p.status_code)
 
 if p.status_code != 200:
     print("Exception caught: " + p.text)
     sys.exit(99)
-    
-    
+
 
 """
 pull_json = p.json()
