@@ -99,8 +99,8 @@ jobs:
       - name: Get latest UAT commit hash
         run: cd ./GH-Actions_INFA_basic_pipeline; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
       
-      - name: Login to UAT
-        run: python ./Default/scripts/infa_login.py
+#       - name: Login to UAT
+#         run: python ./Default/scripts/infa_login.py
 
       - name: Sync and test UAT deployment
         run: python ./Default/scripts/infa_update_and_test.py
