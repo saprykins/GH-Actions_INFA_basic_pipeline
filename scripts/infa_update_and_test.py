@@ -13,8 +13,8 @@ UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 ### Open additional session for UAT
 ###
 
-USERNAME = os.environ['IICS_USERNAME']
-PASSWORD = os.environ['IICS_PASSWORD']
+UAT_USERNAME = os.environ['IICS_USERNAME']
+UAT_PASSWORD = os.environ['IICS_PASSWORD']
 
 URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 UAT_BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
