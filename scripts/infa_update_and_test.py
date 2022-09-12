@@ -37,7 +37,7 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 p = requests.post(
     url = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash", 
     headers = {"Accept": "application/json"; "Content-Type": "application/json"; "INFA-SESSION-ID": SESSION_ID }, 
-    json={"commitHash": "70248d67a1fbdbb99ef21c6286b04c7ce9be84d4"})
+    json={"commitHash": UAT_COMMIT_HASH},)
 
 #
 # p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
