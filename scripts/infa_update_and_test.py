@@ -10,7 +10,7 @@ UAT_SESSION_ID = os.environ['uat_sessionId']
 UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 
 
-###
+### TEMPORARY REMAKE 
 ###
 URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 UAT_BODY = {"username": "TestServiceAccount_cicd","password": "f3(nt?2_@rqe4&Apr"}
@@ -18,7 +18,7 @@ u = requests.post(url = URL, json = UAT_BODY)
 print('artificial status code ', u.status_code)
 uat_data = u.json()
 print('artificial sessiod id ', uat_data['icSessionId'])
-UAT_SESSION_ID = uat_data['icSessionId']
+SESSION_ID = uat_data['icSessionId']
 
 ###
 
@@ -31,7 +31,17 @@ BODY={ "commitHash": UAT_COMMIT_HASH }
 print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
 # Sync Github and UAT Org
-p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
+
+### TEMPORARY REMAKE 
+#
+p = requests.post(
+    url = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash", 
+    headers = {"Accept": "application/json"; "Content-Type": "application/json; "INFA-SESSION-ID": SESSION_ID }, 
+    json={"commitHash": "70248d67a1fbdbb99ef21c6286b04c7ce9be84d4"}
+    )
+
+#
+# p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
 
 print("perso msg: ", p.status_code)
 
