@@ -66,11 +66,12 @@ print('---')
 
 PULL_ACTION_ID = pull_json['pullActionId']
 PULL_STATUS = 'IN_PROGRESS'
-"""
+
 while PULL_STATUS == 'IN_PROGRESS':
     print("Getting pull status from Informatica")
     time.sleep(10)
-    ps = requests.get(URL + '/public/core/v3/sourceControlAction/' + PULL_ACTION_ID, headers = HEADERS, json=BODY)
+    ps = requests.get(URL + '/public/core/v3/sourceControlAction/' + PULL_ACTION_ID, headers = HEADER, json=BODY)
+    # ps = requests.get(URL + '/public/core/v3/sourceControlAction/' + PULL_ACTION_ID, headers = HEADERS, json=BODY)
     pull_status_json = ps.json()
     PULL_STATUS = pull_status_json['status']['state']
 
@@ -79,16 +80,19 @@ while PULL_STATUS == 'IN_PROGRESS':
 if PULL_STATUS != 'SUCCESSFUL':
     print('Exception caught: Pull was not successful')
     sys.exit(99)
+    
 
 # Get all the objects for commit
 URL = "https://emw1.dm-em.informaticacloud.com/saas"
-r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADERS)
+r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADER)
+# r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADERS)
 
 if r.status_code != 200:
     print("Exception caught: " + r.text)
     sys.exit(99)
     
 request_json = r.json()
+"""
 
 # Only get Mapping Tasks
 r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
