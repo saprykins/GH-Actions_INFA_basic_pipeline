@@ -15,8 +15,9 @@ UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 UAT_BODY = {"username": "TestServiceAccount_cicd","password": "f3(nt?2_@rqe4&Apr"}
 u = requests.post(url = URL, json = UAT_BODY)
-print(u.status_code)
+print('artificial status code ', u.status_code)
 uat_data = u.json()
+print('artificial sessiod id ', uat_data['icSessionId'])
 UAT_SESSOIN_ID = uat_data['icSessionId']
 
 ###
