@@ -19,7 +19,7 @@ print('artificial status code ', u.status_code)
 uat_data = u.json()
 print('artificial sessiod id ', uat_data['icSessionId'])
 SESSION_ID = uat_data['icSessionId']
-
+URL = os.environ['IICS_POD_URL']
 ###
 
 
