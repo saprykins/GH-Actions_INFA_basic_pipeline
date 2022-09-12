@@ -34,18 +34,20 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
 ### TEMPORARY REMAKE 
 #
-URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
+# URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
 HEADER = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
-p = requests.post(url = URL2, json = BODY, headers = HEADER)
 
-print('my url ', URL2)
-print('original url ', URL + "/public/core/v3/pullByCommitHash")
+# print('my url ', URL2)
+# print('original url ', URL + "/public/core/v3/pullByCommitHash")
 
-print('my header ', HEADER)
-print('original header ', HEADERS)
+# print('my header ', HEADER)
+# print('original header ', HEADERS)
 
 #
-# p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
+# it worked
+# p = requests.post(url = URL2, json = BODY, headers = HEADER)
+# header was replaced
+p = requests.post(URL + "/public/core/v3/pullByCommitHash", json=BODY, headers = HEADER)
 
 
 
@@ -61,10 +63,10 @@ pull_json = p.json()
 print('---')
 print(pull_json)
 print('---')
-"""
+
 PULL_ACTION_ID = pull_json['pullActionId']
 PULL_STATUS = 'IN_PROGRESS'
-
+"""
 while PULL_STATUS == 'IN_PROGRESS':
     print("Getting pull status from Informatica")
     time.sleep(10)
