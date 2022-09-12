@@ -19,6 +19,8 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 # Sync Github and UAT Org
 p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
 
+print("perso msg: ", p.status_code)
+
 if p.status_code != 200:
     print("Exception caught: " + p.text)
     sys.exit(99)
