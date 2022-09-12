@@ -10,7 +10,7 @@ UAT_SESSION_ID = os.environ['uat_sessionId']
 UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 
 
-### TEMPORARY REMAKE 
+### Open additional session for UAT
 ###
 URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 UAT_BODY = {"username": "TestServiceAccount_cicd","password": "f3(nt?2_@rqe4&Apr"}
@@ -23,8 +23,6 @@ URL = os.environ['IICS_POD_URL']
 ###
 
 
-HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": UAT_SESSION_ID }
-HEADERS_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": UAT_SESSION_ID }
 
 BODY={ "commitHash": UAT_COMMIT_HASH }
 
@@ -32,23 +30,9 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
 # Sync Github and UAT Org
 
-### TEMPORARY REMAKE 
-#
-# URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
-
 HEADER = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
 HEADER_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 
-# print('my url ', URL2)
-# print('original url ', URL + "/public/core/v3/pullByCommitHash")
-
-# print('my header ', HEADER)
-# print('original header ', HEADERS)
-
-#
-# it worked
-# p = requests.post(url = URL2, json = BODY, headers = HEADER)
-# header was replaced
 p = requests.post(URL + "/public/core/v3/pullByCommitHash", json=BODY, headers = HEADER)
 
 
@@ -73,7 +57,6 @@ while PULL_STATUS == 'IN_PROGRESS':
     print("Getting pull status from Informatica")
     time.sleep(10)
     ps = requests.get(URL + '/public/core/v3/sourceControlAction/' + PULL_ACTION_ID, headers = HEADER, json=BODY)
-    # ps = requests.get(URL + '/public/core/v3/sourceControlAction/' + PULL_ACTION_ID, headers = HEADERS, json=BODY)
     pull_status_json = ps.json()
     PULL_STATUS = pull_status_json['status']['state']
 
@@ -87,7 +70,6 @@ if PULL_STATUS != 'SUCCESSFUL':
 # Get all the objects for commit
 URL = "https://emw1.dm-em.informaticacloud.com/saas"
 r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADER)
-# r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADERS)
 
 if r.status_code != 200:
     print("Exception caught: " + r.text)
@@ -130,5 +112,3 @@ for x in r_filtered:
 
 
 requests.post(URL + "/public/core/v3/logout", headers = HEADER)
-"""
-"""
