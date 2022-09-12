@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "cicd-user gets all roles",
+        "description" : "cicd and gen-user gets all roles",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
