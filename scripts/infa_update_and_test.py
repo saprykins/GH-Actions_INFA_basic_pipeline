@@ -35,7 +35,9 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 ### TEMPORARY REMAKE 
 #
 # URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
+
 HEADER = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
+HEADER_V2 = {"Content-Type": "application/json; charset=utf-8", "icSessionId": SESSION_ID }
 
 # print('my url ', URL2)
 # print('original url ', URL + "/public/core/v3/pullByCommitHash")
@@ -92,7 +94,7 @@ if r.status_code != 200:
     sys.exit(99)
     
 request_json = r.json()
-"""
+
 
 # Only get Mapping Tasks
 r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
@@ -100,7 +102,7 @@ r_filtered = [x for x in request_json['changes'] if ( x['type'] == 'MTT') ]
 # This loop runs tests for each one of the mapping tasks
 for x in r_filtered:
     BODY = {"@type": "job","taskId": x['appContextId'],"taskType": "MTT"}
-    t = requests.post(URL + "/api/v2/job/", headers = HEADERS_V2, json = BODY )
+    t = requests.post(URL + "/api/v2/job/", headers = HEADER_V2, json = BODY )
 
     if t.status_code != 200:
         print("Exception caught: " + t.text)
@@ -114,7 +116,7 @@ for x in r_filtered:
     
     while STATE == 0:
         time.sleep(60)
-        a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers = HEADERS_V2)
+        a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers = HEADER_V2)
         
         activity_log = a.json()
 
@@ -126,6 +128,7 @@ for x in r_filtered:
     else:
         print("Mapping task: " + activity_log[0]['objectName'] + " completed successfully. ")
 
-requests.post(URL + "/public/core/v3/logout", headers = HEADERS)
 
+requests.post(URL + "/public/core/v3/logout", headers = HEADER)
+"""
 """
