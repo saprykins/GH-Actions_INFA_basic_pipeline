@@ -38,7 +38,7 @@ URL2 = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommit
 HEADER = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
 p = requests.post(url = URL2, json = BODY, headers = HEADER)
 
-print('my url ', url)
+print('my url ', URL2)
 print('original url ', URL + "/public/core/v3/pullByCommitHash")
 
 print('my header ', HEADER)
@@ -56,8 +56,12 @@ if p.status_code != 200:
     sys.exit(99)
 
 
-"""
+
 pull_json = p.json()
+print('---')
+print(pull_json)
+print('---')
+"""
 PULL_ACTION_ID = pull_json['pullActionId']
 PULL_STATUS = 'IN_PROGRESS'
 
