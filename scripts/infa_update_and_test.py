@@ -46,7 +46,10 @@ print("perso msg: ", p.status_code)
 if p.status_code != 200:
     print("Exception caught: " + p.text)
     sys.exit(99)
+    
+    
 
+"""
 pull_json = p.json()
 PULL_ACTION_ID = pull_json['pullActionId']
 PULL_STATUS = 'IN_PROGRESS'
@@ -108,3 +111,4 @@ for x in r_filtered:
 
 requests.post(URL + "/public/core/v3/logout", headers = HEADERS)
 
+"""
