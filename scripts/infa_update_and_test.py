@@ -34,10 +34,9 @@ print("Syncing the commit " + UAT_COMMIT_HASH + " to the UAT repo")
 
 ### TEMPORARY REMAKE 
 #
-p = requests.post(
-    url = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash", 
-    headers = {"Accept": "application/json"; "Content-Type": "application/json"; "INFA-SESSION-ID": SESSION_ID }, 
-    json={"commitHash": UAT_COMMIT_HASH},)
+URL = "https://emw1.dm-em.informaticacloud.com/saas/public/core/v3/pullByCommitHash"
+HEADERS = {"Content-Type": "application/json; charset=utf-8", "INFA-SESSION-ID": SESSION_ID }
+p = requests.post(url = URL, json = BODY, headers = HEADER)
 
 #
 # p = requests.post(URL + "/public/core/v3/pullByCommitHash", headers = HEADERS, json=BODY)
