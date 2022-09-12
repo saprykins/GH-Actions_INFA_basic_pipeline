@@ -12,6 +12,10 @@ UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
 
 ### Open additional session for UAT
 ###
+
+UAT_SESSION_ID = os.environ['uat_sessionId']
+UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
+
 URL = "https://dm-em.informaticacloud.com/ma/api/v2/user/login"
 UAT_BODY = {"username": UAT_USERNAME,"password": UAT_PASSWORD}
 u = requests.post(url = URL, json = UAT_BODY)
