@@ -57,6 +57,7 @@ if PULL_STATUS != 'SUCCESSFUL':
     sys.exit(99)
 
 # Get all the objects for commit
+URL = "https://emw1.dm-em.informaticacloud.com/saas"
 r = requests.get(URL + "/public/core/v3/commit/" + UAT_COMMIT_HASH, headers = HEADERS)
 
 if r.status_code != 200:
