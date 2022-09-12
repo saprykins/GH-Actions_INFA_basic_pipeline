@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "changed yml: n-2 file to login",
+        "description" : "cicd-user gets all roles",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
