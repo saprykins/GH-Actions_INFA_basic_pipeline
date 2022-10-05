@@ -78,7 +78,7 @@ jobs:
 
       - uses: actions/checkout@v3
         with:
-          path: Old # folder in INFA
+          path: OLD # folder in INFA
 
       # Install python and dependent modules
       - uses: actions/setup-python@v3
@@ -100,7 +100,7 @@ jobs:
         run: cd ./GH-Actions_INFA_basic_pipeline; git pull; echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
       
       - name: Login to UAT
-        run: python ./Old/scripts/infa_login.py
+        run: python ./OLD/scripts/infa_login.py
 
       - name: Sync and test UAT deployment
-        run: python ./Old/scripts/infa_update_and_test.py
+        run: python ./OLD/scripts/infa_update_and_test.py
