@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test 60-3",
+        "description" : "test 62-2",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
@@ -25,7 +25,7 @@
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
     "id" : "cgmsfCdFuk6hy9ppadrwEK",
-    "name" : "conn-hungary-dev",
+    "name" : "conn-hun-uat",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
