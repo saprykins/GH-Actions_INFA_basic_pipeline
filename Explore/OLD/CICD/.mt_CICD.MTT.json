@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test 60-2",
+        "description" : "test 62-2",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
@@ -25,7 +25,7 @@
   "dataFileExtension" : "zip",
   "objectRefs" : [ {
     "id" : "6PSXbcn9aWZj7CvEJ5i5kc",
-    "name" : "hu-vm-np-secureag-001",
+    "name" : "uat-vm-np-secureag-001",
     "type" : "AgentGroup",
     "metadata" : {
       "modelVersion" : {
@@ -57,7 +57,7 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
+        "description" : "test 62-2",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
@@ -65,7 +65,7 @@
     "path" : "/Explore/OLD/CICD"
   }, {
     "id" : "cgmsfCdFuk6hy9ppadrwEK",
-    "name" : "conn-hungary-dev",
+    "name" : "conn-hun-uat",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
