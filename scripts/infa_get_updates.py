@@ -1,5 +1,3 @@
-# many stuff i don't know
-
 import requests
 import os
 import json
