@@ -46,6 +46,7 @@ print("perso msg: ", p.status_code)
 
 if p.status_code != 200:
     print("Exception caught: " + p.text)
+    print(p)
     sys.exit(99)
 
 
