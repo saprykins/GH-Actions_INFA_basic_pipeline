@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test 60",
+        "description" : "test 61",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
@@ -57,7 +57,7 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "",
+        "description" : "test 60-3",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
